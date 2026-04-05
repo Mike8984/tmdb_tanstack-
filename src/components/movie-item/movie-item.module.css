@@ -1,0 +1,11 @@
+.movieItem {
+    cursor: pointer;
+    transition: transform 0.3s linear;
+
+    &:hover {
+        transform: scale(1.075);
+    }
+}
+.releaseDate {
+    color: #b3b3b3;
+}
