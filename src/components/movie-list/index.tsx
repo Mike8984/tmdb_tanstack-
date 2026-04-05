@@ -11,8 +11,8 @@ function MovieList({ movies }: Props) {
     return (
         <ul className={styles.movieList}>
             {movies.map((movie) => (
-                <Link to={`/movies/${movie.id}`}>
-                    <MovieItem key={movie.id} {...movie} />
+                <Link key={movie.id} to={`/movies/${movie.id}`}>
+                    <MovieItem {...movie} />
                 </Link>
             ))}
         </ul>

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState, type ChangeEvent } from "react";
 import MovieList from "../../components/movie-list";
 import { useDebounce } from "../../hooks/useDebounce";
-import { moviesService } from "../../services/movies.service";
+import { fetchMovies } from "../../services/movies.service";
 import styles from "./home.module.css";
 
 function HomePage() {
@@ -21,7 +21,7 @@ function HomePage() {
         data: movies,
     } = useQuery({
         queryKey: ["movies", debouncedSearch],
-        queryFn: () => moviesService.fetchMovies(debouncedSearch),
+        queryFn: () => fetchMovies(debouncedSearch),
         enabled: debouncedSearch.length > 2 || debouncedSearch === "",
         refetchOnWindowFocus: false,
         placeholderData: (prev) => prev,

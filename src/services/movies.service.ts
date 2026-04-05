@@ -4,37 +4,34 @@ const API_BASE_URL = "https://api.themoviedb.org/3";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-export const moviesService = {
-    fetchMovies: async (query: string = "") => {
-        const endpoint = query
-            ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-            : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+const headers = {
+    accept: "application/json",
+    Authorization: `Bearer ${API_KEY}`,
+};
 
-        const options = {
-            method: "GET",
-            url: endpoint,
-            headers: {
-                accept: "application/json",
-                Authorization: `Bearer ${API_KEY}`,
-            },
-        };
+export const fetchMovies = async (query: string = "") => {
+    const endpoint = query
+        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
+        : `${API_BASE_URL}/movie/popular?language=en-US&page=1`;
 
-        const { data } = await axios.request(options);
-        return data.results;
-    },
+    const options = {
+        method: "GET",
+        url: endpoint,
+        headers,
+    };
 
-    getMovie: async (id: number) => {
-        const endpoint = `${API_BASE_URL}/movie/${id}`
-        const options = {
-            method: "GET",
-            url: endpoint,
-            headers: {
-                accept: "application/json",
-                Authorization: `Bearer ${API_KEY}`,
-            },
-        };
+    const { data } = await axios.request(options);
+    return data.results;
+};
 
-        const {data} = await axios.request(options)
-        return data
-    }
+export const fetchMovie = async (id: string) => {
+    const endpoint = `${API_BASE_URL}/movie/${id}?language=en-US`;
+    const options = {
+        method: "GET",
+        url: endpoint,
+        headers,
+    };
+
+    const { data } = await axios.request(options);
+    return data;
 };
