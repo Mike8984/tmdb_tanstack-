@@ -1,11 +1,21 @@
 .movieItem {
+    position: relative;
     cursor: pointer;
     transition: transform 0.3s linear;
 
     &:hover {
         transform: scale(1.075);
     }
+
+    img {
+        opacity: 0.7;
+    }
 }
-.releaseDate {
-    color: #b3b3b3;
+
+.movieItem__title {
+    position: absolute;
+    bottom: 20px;
+    left: 12px;
 }
+
+
