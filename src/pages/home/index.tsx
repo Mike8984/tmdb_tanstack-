@@ -3,7 +3,7 @@ import { useState, type ChangeEvent } from "react";
 import MovieList from "../../components/movie-list";
 import { useDebounce } from "../../hooks/useDebounce";
 import { fetchMovies } from "../../services/movies.service";
-import styles from "./home.module.css";
+import styles from "./home.module.scss";
 
 function HomePage() {
     const [searchTerm, setSearchTerm] = useState("");

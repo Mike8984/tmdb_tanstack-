@@ -15,7 +15,7 @@ function RootLayout() {
             </main>
             <footer className="footer">
                 <div className="container">
-                    <h3>Copyright</h3>
+                    <h3>&copy; Copyright</h3>
                 </div>
             </footer>
         </>

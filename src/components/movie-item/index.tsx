@@ -1,5 +1,5 @@
 import type { IMovie } from "../../types";
-import styles from "./movie-item.module.css";
+import styles from "./movie-item.module.scss";
 
 function MovieItem({ title, poster_path }: IMovie) {
     return (

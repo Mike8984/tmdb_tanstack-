@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
-import { fetchMovie } from "../../services/movies.service";
-import styles from './movie-page.module.css'
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from 'react-router';
+import { fetchMovie } from '../../services/movies.service';
+import styles from './movie-page.module.scss';
 
 function MoviePage() {
     const { id } = useParams();
@@ -11,7 +11,7 @@ function MoviePage() {
         isLoading,
         error,
     } = useQuery({
-        queryKey: ["movie", id],
+        queryKey: ['movie', id],
         queryFn: () => fetchMovie(id),
     });
 
@@ -35,9 +35,14 @@ function MoviePage() {
                     }
                     alt={movie.title}
                 />
-                <div>
+                <div className={styles.moviePage__description}>
                     <h1>{movie.title}</h1>
                     <p>{movie.overview}</p>
+                    <ul className={styles.moviePage__genres}>
+                        {movie.genres.map((genre) => (
+                            <li key={genre.id}>{genre.name}</li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>

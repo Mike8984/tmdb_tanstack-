@@ -1,0 +1,16 @@
+.moviePage {
+    img {
+        width: 240px;
+        height: 360px;
+    }
+    &__content {
+        display: flex;
+        gap: 32px;
+    }
+    &__genres {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        opacity: 0.3;
+    }
+}

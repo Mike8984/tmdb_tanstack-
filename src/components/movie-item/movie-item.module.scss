@@ -4,18 +4,16 @@
     transition: transform 0.3s linear;
 
     &:hover {
-        transform: scale(1.075);
+        transform: scale(1.05);
     }
 
     img {
         opacity: 0.7;
     }
+
+    &__title {
+        position: absolute;
+        bottom: 20px;
+        left: 12px;
+    }
 }
-
-.movieItem__title {
-    position: absolute;
-    bottom: 20px;
-    left: 12px;
-}
-
-

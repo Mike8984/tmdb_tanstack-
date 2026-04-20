@@ -1,7 +1,7 @@
-import { Link } from "react-router";
-import type { IMovie } from "../../types";
-import MovieItem from "../movie-item";
-import styles from "./movie-list.module.css";
+import { Link } from 'react-router';
+import type { IMovie } from '../../types';
+import MovieItem from '../movie-item';
+import styles from './movie-list.module.scss';
 
 type Props = {
     movies: IMovie[];

@@ -2,6 +2,23 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
 }
 
 body {
@@ -20,9 +37,14 @@ a {
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1420px;
+    padding: 0 10px;
     width: 100%;
     margin: 0 auto;
+}
+
+.header {
+    padding: 16px;
 }
 
 img {
