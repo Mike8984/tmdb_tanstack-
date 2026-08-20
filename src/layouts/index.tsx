@@ -5,7 +5,7 @@ function RootLayout() {
         <>
             <header className="header">
                 <div className="container">
-                    <h2 className="title">Movies</h2>
+                    <h2 className="title">TMDB API</h2>
                 </div>
             </header>
             <main className="main">

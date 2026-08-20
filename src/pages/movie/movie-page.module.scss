@@ -1,12 +1,23 @@
 .moviePage {
-    img {
-        width: 240px;
-        height: 360px;
-    }
+    padding: 100px 0;
+
     &__content {
-        display: flex;
-        gap: 32px;
+        max-width: 1000px;
+        margin: 0 auto;
     }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__poster {
+        height: 800px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
     &__genres {
         display: flex;
         align-items: center;
