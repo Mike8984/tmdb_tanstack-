@@ -1,7 +1,8 @@
 
 
 .searchInputWrapper {
-    position: relative;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
     .searchInput {
         border: 1px solid #fff;
